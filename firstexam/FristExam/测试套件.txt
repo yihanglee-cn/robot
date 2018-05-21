@@ -1,0 +1,15 @@
+*** Settings ***
+Library           Screenshot
+Library           Selenium2Library
+
+*** Test Cases ***
+login
+    [Setup]
+    open browser    http://www.r7777.com.cn/index.html    gc
+    maximize browser window
+    click link    登录
+    input text    name=iphone    17688169411
+    input text    name=password    lin123456
+    click button    id=bt2
+    wait until page contains element    xpath=/html/body/div[2]/div/div[1]/img
+    [Teardown]
