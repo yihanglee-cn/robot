@@ -1,0 +1,31 @@
+*** Settings ***
+Resource          elements.txt
+Library           Selenium2Library
+Library           Screenshot
+
+*** Keywords ***
+login and close browser
+    [Arguments]    ${url}    ${username}    ${password}    ${vertext}
+    open browser    ${url}    gc
+    maximize browser window
+    click link    登录
+    input text    name=iphone    ${username}
+    input text     name=password    ${password}
+    click button    id=bt2
+    set browser implicit wait    10
+    page should contain    ${vertext}
+    capture page screenshot
+    close all browsers
+
+login but not close browser
+    [Arguments]    ${url}    ${username}    ${password}    ${vertext}
+    open browser    ${url}    gc
+    maximize browser window
+    click link    登录
+    input text    name=iphone    ${username}
+    input text     name=password    ${password}
+    click button    id=bt2
+    set browser implicit wait    10
+    page should contain    ${vertext}
+    capture page screenshot
+    close all browsers

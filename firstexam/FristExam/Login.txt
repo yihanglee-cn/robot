@@ -1,0 +1,16 @@
+*** Settings ***
+Library           Screenshot
+Library           Selenium2Library
+Resource          elements.txt
+Resource          testflow.txt
+
+*** Test Cases ***
+login
+    [Setup]
+    [Teardown]
+
+test
+
+login success
+    login and close browser    http://www.r7777.com.cn/index.html    17688169411    lin123456    李一杭
+    login and close browser    http://www.r7777.com.cn/index.html    17688169412    lin123456    李一杭啊

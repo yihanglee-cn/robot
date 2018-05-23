@@ -1,0 +1,5 @@
+*** Settings ***
+Library           Screenshot
+Library           Selenium2Library
+
+*** Keywords ***
